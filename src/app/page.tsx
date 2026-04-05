@@ -4,6 +4,7 @@ import { ProjectCard } from "../components/projects";
 import { Skill } from "@/components/skills";
 import { projectDetails } from "./projects/page";
 import { Footer } from "@/components/footer";
+import GithubCommits from "@/components/githubCalender";
 
 
 
@@ -19,6 +20,9 @@ export default function Home() {
 
         <div>
           <Profile />
+        </div>
+        <div className="m-8">
+          <GithubCommits/>
         </div>
 
         <div className="mt-20">
