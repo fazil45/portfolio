@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono,Cabin_Sketch } from "next/font/google";
+import {  Iceland } from "next/font/google";
 import "./globals.css";
 
-const cabin = Cabin_Sketch({
-  weight: "400",
-  subsets: ["latin"],
+const iceland = Iceland({
+  weight:"400",
+  variable: "--font-iceland-sans"
 });
+
 
 export const metadata: Metadata = {
   title: "Mohd Fazil",
@@ -20,7 +21,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cabin.className} h-full antialiased`}
+      className={`${iceland.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
