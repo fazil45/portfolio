@@ -1,36 +1,72 @@
-import { CircleFadingArrowUpIcon } from "lucide-react"
-import Image from "next/image"
-import { FaArrowAltCircleLeft, FaArrowCircleUp, FaRegArrowAltCircleLeft } from "react-icons/fa"
-import { GoArrowUpRight } from "react-icons/go"
+import Image from "next/image";
+import { GoArrowUpRight } from "react-icons/go";
 
 type ProjectDetails = {
-    image:string,
-    name:string,
-    details:string,
-    link:string
-}
+  image: string;
+  name: string;
+  details: string;
+  link: string;
+};
 
+export const ProjectCard = ({
+  image,
+  name,
+  details,
+  link,
+}: ProjectDetails) => {
+  return (
+    <div className="group relative w-full max-w-125 overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-950/70 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-neutral-600 hover:shadow-[0_20px_80px_-20px_rgba(255,255,255,0.15)]">
+      
+      {/* Glow */}
+      <div className="absolute inset-0 bg-linear-to-br from-neutral-700/10 via-transparent to-neutral-500/10 opacity-0 transition duration-500 group-hover:opacity-100" />
 
+      {/* Image */}
+      <div className="relative overflow-hidden p-3">
+        <div className="relative h-52 overflow-hidden rounded-2xl border border-neutral-800 bg-linear-to-br from-neutral-900 via-neutral-800 to-black">
+          
+          <Image
+            src={image}
+            alt={name}
+            width={600}
+            height={400}
+            className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+          />
 
-export const ProjectCard = ({image,name,details,link}:ProjectDetails)=>{
-    return (
-        <>
-            <div className="h-fit w-fit flex flex-col items-center justify-center p-2 border rounded-md shadow-2xl/10 shadow-neutral-400">
-                <div>
-                    <div className="bg-linear-to-br from-neutral-800 via-neutral-600 to-neutral-900 max-w-100 h-60 flex items-center justify-center p-2 border rounded-md">
-                        <div className="h-50 max-w-90 ">
-                            <Image className="w-full h-full transition duration-500 hover:scale-[1.02]" width={1200} height={700} alt="image" src={image} />
-                        </div>
-                    </div>
-                </div>
-                <div className="flex flex-col items-center justify-center max-w-80 mt-2 ">
-                    <div className="m-2">
-                        <h2 className="text-xl font font-medium">{name}</h2>
-                    <p className="text-sm text-neutral-400">{details}</p>
-                    </div>
-                    <a  href={link} className="w-full flex items-center justify-center  gap-1 p-1 border rounded text-sm cursor-pointer hover:bg-neutral-400 hover:text-neutral-700 transform duration-200 ease-linear" target="_blank" >Go to Project <GoArrowUpRight /> </a>
-                </div>
-            </div>
-        </>
-    )
-}
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent opacity-60" />
+
+          {/* Badge */}
+          <div className="absolute right-3 top-3 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[10px] text-white backdrop-blur-md">
+            Project
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="space-y-4 p-4">
+        <div>
+          <h2 className="text-xl font-semibold tracking-tight text-white transition duration-300 group-hover:text-neutral-200">
+            {name}
+          </h2>
+
+          <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-neutral-400">
+            {details}
+          </p>
+        </div>
+
+        {/* Button */}
+        <a
+          href={link}
+          target="_blank"
+          className="flex items-center justify-between rounded-2xl border border-neutral-800 bg-neutral-900 px-4 py-3 text-sm font-medium text-neutral-200 transition-all duration-300 hover:border-neutral-600 hover:bg-neutral-800"
+        >
+          <span>View Project</span>
+
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-black transition duration-300 group-hover:rotate-45">
+            <GoArrowUpRight/>
+          </div>
+        </a>
+      </div>
+    </div>
+  );
+};

@@ -24,6 +24,13 @@ export const projectDetails = [
     link: "https://fazil-payflow.netlify.app/",
     image: "/brainstrom.png",
   },
+  {
+    id: 4,
+    name: "Blogify",
+    details: "Create your blogs",
+    link: "https://fazil-blogify.netlify.app/",
+    image: "/blogify.png",
+  },
 ];
 
 const Project = () => {

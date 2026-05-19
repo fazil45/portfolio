@@ -11,9 +11,6 @@ export const Navbar = () => {
           <div className="p-1  text-md  rounded">
             <Link href={"/projects"}>Projects</Link>
           </div>
-          <div className="p-1  text-md  rounded">
-            <Link href={"/experience"}>Experience</Link>
-          </div>
           <div className="p-1  text-md  rounded">Light</div>
         </div>
       </div>

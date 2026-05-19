@@ -6,8 +6,6 @@ import { projectDetails } from "./projects/page";
 import { Footer } from "@/components/footer";
 import GithubCommits from "@/components/githubCalender";
 
-
-
 export default function Home() {
   return (
     <div className="min-h-screen w-full  dark:bg-zinc-950 dark:text-white dark:bg-[radial-gradient(circle,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-white text-zinc-900 bg-[radial-gradient(circle,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-size-[12px_12px]">
@@ -22,14 +20,14 @@ export default function Home() {
           <Profile />
         </div>
         <div className="m-8">
-          <GithubCommits/>
+          <GithubCommits />
         </div>
 
         <div className="mt-20">
           <div className="flex items-center justify-center">
             <h1 className="text-4xl font-semibold mb-6">Projects</h1>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-8">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
             {projectDetails.map((details) => (
               <ProjectCard
                 key={details.id}
@@ -46,10 +44,9 @@ export default function Home() {
           <Skill />
         </div>
         <div>
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </div>
   );
 }
-
