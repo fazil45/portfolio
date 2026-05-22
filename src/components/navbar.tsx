@@ -8,10 +8,10 @@ export const Navbar = () => {
           <Link href={"/"}>Mohd Fazil</Link>
         </div>
         <div className="flex gap-2">
-          <div className="p-1  text-md  rounded">
+          <div className="p-1 font-medium lg:text-md  rounded">
             <Link href={"/projects"}>Projects</Link>
           </div>
-          <div className="p-1  text-md  rounded">Light</div>
+          <div className="p-1 font-medium text-md rounded"></div>
         </div>
       </div>
     </>

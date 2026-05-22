@@ -46,7 +46,7 @@ const Project = () => {
           <div className="flex items-center justify-center">
             <h1 className="text-4xl font-semibold mb-4">Projects</h1>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-8">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
             {projectDetails.map((details) => (
               <ProjectCard
                 key={details.id}

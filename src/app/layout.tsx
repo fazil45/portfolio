@@ -9,7 +9,7 @@ const iceland = Iceland({
 
 
 export const metadata: Metadata = {
-  title: "Mohd Fazil",
+  title: "Fazil",
   description: "Portfolio",
 };
 
