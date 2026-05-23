@@ -1,15 +1,14 @@
 "use client";
 import Image from "next/image";
-import {  FaMailBulk } from "react-icons/fa";
+import { FaMailBulk } from "react-icons/fa";
 import { socials } from "@/lib/socialType";
 import { toast } from "sonner";
 
-
 export const Profile = () => {
-  const pasteToClipboard = async() => {
+  const pasteToClipboard = async () => {
     const mail = "mdfazil846@gmail.com";
     await navigator.clipboard.writeText(mail);
-    toast.message("Email is Copied")
+    toast.message("Email is Copied");
   };
 
   return (
@@ -24,12 +23,17 @@ export const Profile = () => {
             src="/photo.jpg"
           ></Image>
         </div>
-        <div className="flex flex-col gap-4 h-54  lg:text-lg text-shadow-2xs/60  shadow-neutral-200 lg:max-w-xl mt-12">
-          <div className="text-xl">
-            Hey, I'm Fazil, a full stack developer who loves building clean,
-            modern websites and apps where design, functionality, and even the
-            smallest details matter, with a focus on making products that are
-            both practical and visually satisfying.
+        <div className="flex flex-col gap-4 h-54  lg:text-lg text-shadow-2xs/60 lg:max-w-xl mt-12">
+          <div className="text-xl leading-relaxed text-muted-foreground">
+            Hey, I'm <span className="font-semibold text-cyan-500">Fazil</span>,
+            a{" "}
+            <span className="font-semibold text-cyan-500">
+              Full Stack Developer
+            </span>{" "}
+            focused on building scalable, high-performance web applications with
+            modern UI/UX, cloud infrastructure, and <span className="font-semibold text-cyan-500">DevOps workflows using AWS,
+            Docker, and CI/CD</span> — creating products that are both visually
+            polished and production-ready.
           </div>
           <div className="mt-4 flex gap-2">
             <div className="flex items-center justify-center gap-4">

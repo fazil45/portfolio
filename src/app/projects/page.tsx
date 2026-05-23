@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { ProjectCard } from "@/components/projects";
+import { ArrowUpRightIcon } from "lucide-react";
 
 export const projectDetails = [
   {
@@ -35,18 +36,18 @@ export const projectDetails = [
 
 const Project = () => {
   return (
-    <div className="min-h-screen w-full  dark:bg-zinc-950 dark:text-white dark:bg-[radial-gradient(circle,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-white text-zinc-900 bg-[radial-gradient(circle,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-size-[12px_12px]">
-      <div className="max-w-5xl mx-auto px-8 relative mt-8">
-        <div className="h-full w-px absolute top-0 -left-2 bg-zinc-300 dark:bg-zinc-700"></div>
-        <div className="h-full w-px absolute top-0 -right-4 bg-zinc-300 dark:bg-zinc-700"></div>
-        <div>
+    <div className="min-h-screen w-full  dark:bg-zinc-950 dark:text-white dark:bg-[radial-gradient(circle,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-white text-zinc-900 bg-[radial-gradient(circle,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-size-[12px_12px] max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto px-8 relative mt-8 mb-12">
+        <div className="mb-12">
           <Navbar />
         </div>
         <div>
           <div className="flex items-center justify-center">
-            <h1 className="text-4xl font-semibold mb-4">Projects</h1>
+            <h1 className="text-2xl lg:text-4xl font-semibold mb-8">
+              Projects
+            </h1>
           </div>
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 mb-12">
             {projectDetails.map((details) => (
               <ProjectCard
                 key={details.id}
@@ -56,6 +57,11 @@ const Project = () => {
                 name={details.name}
               />
             ))}
+          </div>
+          <div className="flex items-center justify-center pb-12 ">
+            <div className="px-2 py-1 group border rounded-md flex items-center justify-center gap-2 cursor-pointer">
+              Check More <ArrowUpRightIcon className="group-hover:rotate-45 transition-all ease-in-out" />
+            </div>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ export const Navbar = () => {
           <Link href={"/"}>Mohd Fazil</Link>
         </div>
         <div className="flex gap-2">
-          <div className="px-2 py-1 font-medium text-sm lg:text-md border rounded-md hover:bg-gray-50">
+          <div className="px-2 py-1 font-medium text-sm lg:text-md border rounded-md">
             <Link href={"/projects"}>Projects</Link>
           </div>
           <div className="p-1 font-medium text-md rounded">

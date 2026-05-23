@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import { Iceland, Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
-});
-
-const iceland = Iceland({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-iceland-sans",
 });
 
 export const metadata: Metadata = {
@@ -30,12 +24,11 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={cn(
-        "h-full antialiased scroll-smooth",
-        inter.variable,
-        iceland.variable
+        "h-full scroll-smooth antialiased",
+        manrope.variable
       )}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+      <body className="min-h-full bg-background font-sans text-foreground">
         <Toaster
           duration={3000}
           theme="system"

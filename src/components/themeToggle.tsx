@@ -55,7 +55,7 @@ export default function ThemeToggle() {
         relative flex w-13 items-center
         rounded-full border border-border
         bg-card px-1 shadow-lg
-        transition-all duration-500
+        transition-all duration-500 cursor-pointer
       "
     >
       {/* Glow */}
