@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import {  Iceland } from "next/font/google";
+import { Iceland, Inter } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+import { Toaster } from "sonner";
 
-const iceland = Iceland({
-  weight:"400",
-  variable: "--font-iceland-sans"
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
 });
 
+const iceland = Iceland({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-iceland-sans",
+});
 
 export const metadata: Metadata = {
   title: "Fazil",
@@ -21,9 +28,22 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${iceland.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={cn(
+        "h-full antialiased scroll-smooth",
+        inter.variable,
+        iceland.variable
+      )}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+        <Toaster
+          duration={3000}
+          theme="system"
+          position="top-center"
+        />
+
+        {children}
+      </body>
     </html>
   );
 }

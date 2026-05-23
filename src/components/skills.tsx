@@ -44,7 +44,7 @@ const skillsDetail: Skill[] = [
 
 export const Skill = () => {
   return (
-    <div className="flex flex-wrap items-center justify-center  gap-4 m-4 border border-neutral-400 p-4 rounded-md">
+    <div className="flex flex-wrap items-center justify-center   gap-4 m-4 border border-neutral-400 p-4 rounded-md">
         
       {skillsDetail.map((skillDetails) => {
         const Icon = skillDetails.icon
