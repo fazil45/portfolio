@@ -31,7 +31,7 @@ export default function RootLayout({
       <body className="min-h-full bg-background font-sans text-foreground">
         <Toaster
           duration={3000}
-          theme="system"
+          theme="dark"
           position="top-center"
         />
 
