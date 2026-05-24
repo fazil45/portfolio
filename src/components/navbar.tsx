@@ -6,7 +6,7 @@ import { Cross, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export const Navbar = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true );
   const handleDropDown = () => {
     setShow((prev) => !prev);
   };
