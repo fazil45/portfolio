@@ -18,7 +18,7 @@ const Content = async () => {
       <div>
         <Profile />
       </div>
-      <div className="m-8 border dark:border-neutral-200 border-neutral-600 py-3 px-5 rounded-md">
+      <div className="mt-36 border dark:border-neutral-200 border-neutral-600 py-3 px-5 rounded-md">
         <GithubCard contributions={contributions} total={total}/>
       </div>
 

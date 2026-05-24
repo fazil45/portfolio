@@ -23,7 +23,7 @@ export const Profile = () => {
             src="/photo.jpg"
           ></Image>
         </div>
-        <div className="flex flex-col gap-4 h-54  lg:text-lg text-shadow-2xs/60 lg:max-w-xl mt-12">
+        <div className="flex flex-col gap-4 h-54  lg:text-lg text-shadow-2xs/60 lg:max-w-xl lg:mt-12">
           <div className="text-xl leading-relaxed text-muted-foreground">
             Hey, I'm <span className="font-semibold text-cyan-500">Fazil</span>,
             a{" "}
@@ -61,16 +61,7 @@ export const Profile = () => {
               Email
             </div>
           </div>
-        </div>
-        <div className="lg:hidden block h-54 w-54 shadow-2xl/70 mt-20 shadow-neutral-600">
-          <Image
-            className="rounded-lg"
-            width={500}
-            height={500}
-            alt="Image"
-            src="/photo.jpg"
-          ></Image>
-        </div>
+        </div>  
       </div>
     </>
   );
