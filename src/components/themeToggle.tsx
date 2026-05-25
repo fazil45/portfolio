@@ -1,56 +1,24 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as
-      | "light"
-      | "dark"
-      | null;
-
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.toggle(
-        "dark",
-        savedTheme === "dark"
-      );
-    } else {
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-
-      const initialTheme = prefersDark ? "dark" : "light";
-
-      setTheme(initialTheme);
-
-      document.documentElement.classList.toggle(
-        "dark",
-        prefersDark
-      );
-    }
+    setMounted(true);
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme =
-      theme === "dark" ? "light" : "dark";
-
-    setTheme(newTheme);
-
-    document.documentElement.classList.toggle(
-      "dark",
-      newTheme === "dark"
-    );
-
-    localStorage.setItem("theme", newTheme);
-  };
+  if (!mounted) return null;
 
   return (
     <button
-      onClick={toggleTheme}
+      onClick={() =>
+        setTheme(theme === "dark" ? "light" : "dark")
+      }
       className="
         relative flex w-13 items-center
         rounded-full border border-border
@@ -58,7 +26,6 @@ export default function ThemeToggle() {
         transition-all duration-500 cursor-pointer
       "
     >
-      {/* Glow */}
       <div
         className={`
           absolute inset-0 rounded-full
@@ -71,7 +38,6 @@ export default function ThemeToggle() {
         `}
       />
 
-      {/* Slider */}
       <div
         className={`
           relative z-10 flex h-6 w-6 items-center

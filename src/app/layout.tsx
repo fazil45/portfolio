@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/themeProvider";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -23,19 +24,11 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn(
-        "h-full scroll-smooth antialiased",
-        manrope.variable
-      )}
+      className={cn("h-full scroll-smooth antialiased", manrope.variable)}
     >
       <body className="min-h-full bg-background font-sans text-foreground">
-        <Toaster
-          duration={3000}
-          theme="dark"
-          position="top-center"
-        />
-
-        {children}
+        <Toaster duration={3000} theme="dark" position="top-center" />
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

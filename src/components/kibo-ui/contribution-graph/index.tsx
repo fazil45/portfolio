@@ -20,6 +20,8 @@ import {
   type ReactNode,
   useContext,
   useMemo,
+  useEffect,
+  useRef,
 } from "react";
 import { cn } from "@/lib/utils";
 
@@ -377,8 +379,17 @@ export const ContributionGraphCalendar = ({
     [weeks, labels.months],
   );
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = scrollRef.current.scrollWidth;
+    }
+  }, []);
+
   return (
     <div
+      ref={scrollRef}
       className={cn("max-w-full overflow-x-auto overflow-y-hidden", className)}
       {...props}
     >
