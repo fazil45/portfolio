@@ -5,6 +5,7 @@ import { Navbar } from "./navbar";
 import { projectDetails } from "@/app/projects/page";
 import { getCachedContributions } from "@/lib/github";
 import GithubCard from "./github";
+import Blogs from "./blog";
 
 const Content = async () => {
   const { contributions, total } = await getCachedContributions();
@@ -33,10 +34,17 @@ const Content = async () => {
               image={details.image}
               details={details.details}
               link={details.link}
+              github={details.github}
               name={details.name}
             />
           ))}
         </div>
+      </div>
+      <div className="flex items-center justify-center flex-col m-4">
+        <h1 className="text-3xl mt-4 lg:text-4xl font-semibold">
+          Blogs
+        </h1>
+        <Blogs/>
       </div>
       <div className="flex items-center justify-center flex-col m-4">
         <h1 className="text-3xl mt-4 lg:text-4xl font-semibold">

@@ -383,7 +383,7 @@ export const ContributionGraphCalendar = ({
 
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollLeft = scrollRef.current.scrollWidth;
+      scrollRef.current.scrollLeft = scrollRef.current.scrollWidth / 2;
     }
   }, []);
 

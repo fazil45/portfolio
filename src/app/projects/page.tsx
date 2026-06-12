@@ -9,6 +9,7 @@ export const projectDetails = [
     details:
       "A modern collaborative drawing platform that brings your team together.",
     link: "https://fazil-canvascraft.netlify.app/",
+    github: "https://github.com/fazil45/canvascraft",
     image: "/collabcanvas.png",
   },
   {
@@ -16,13 +17,15 @@ export const projectDetails = [
     name: "PayFlow",
     details: "Send, receive and manage your money effortlessly with PayFlow.",
     link: "https://fazil-payflow.netlify.app/",
+    github: "https://github.com/fazil45/payflow",
     image: "/payflow.png",
   },
   {
     id: 3,
     name: "BrainStorm",
     details: "A cleaner home for your online brain",
-    link: "https://fazil-payflow.netlify.app/",
+    link: "https://fazil-brainstorm.netlify.app/",
+    github: "https://github.com/fazil45/brainstorm-backend",
     image: "/brainstrom.png",
   },
   {
@@ -30,6 +33,7 @@ export const projectDetails = [
     name: "Blogify",
     details: "Create your blogs",
     link: "https://fazil-blogify.netlify.app/",
+    github: "https://github.com/fazil45/blogify",
     image: "/blogify.png",
   },
 ];
@@ -54,13 +58,15 @@ const Project = () => {
                 image={details.image}
                 details={details.details}
                 link={details.link}
+                github={details.github}
                 name={details.name}
               />
             ))}
           </div>
           <div className="flex items-center justify-center pb-12 ">
             <div className="px-2 py-1 group border rounded-md flex items-center justify-center gap-2 cursor-pointer">
-              Check More <ArrowUpRightIcon className="group-hover:rotate-45 transition-all ease-in-out" />
+              Check More{" "}
+              <ArrowUpRightIcon className="group-hover:rotate-45 transition-all ease-in-out" />
             </div>
           </div>
         </div>

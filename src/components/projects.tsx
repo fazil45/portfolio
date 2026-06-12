@@ -6,14 +6,10 @@ type ProjectDetails = {
   name: string;
   details: string;
   link: string;
+  github:string;
 };
 
-export const ProjectCard = ({
-  image,
-  name,
-  details,
-  link,
-}: ProjectDetails) => {
+export const ProjectCard = ({ image, name, details, link, github }: ProjectDetails) => {
   return (
     <div
       className="
@@ -83,32 +79,60 @@ export const ProjectCard = ({
         </div>
 
         {/* Button */}
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="
+        <div className="flex items-center justify-center gap-4 w-full">
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
             flex items-center justify-between
             rounded-xl border border-border
             bg-muted/40 px-4 py-3
             text-sm font-medium
             transition-all duration-300
-            hover:bg-muted
+            hover:bg-muted w-full
           "
-        >
-          <span>View Project</span>
+          >
+            <span>View Project</span>
 
-          <div
-            className="
+            <div
+              className="
               flex h-8 w-8 items-center justify-center
               rounded-full bg-background
               transition-transform duration-300
               group-hover:rotate-45
             "
+            >
+              <GoArrowUpRight className="text-base" />
+            </div>
+          </a>
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+            flex items-center justify-between
+            rounded-xl border border-border
+            bg-muted/40 px-4 py-3
+            text-sm font-medium
+            transition-all duration-300
+            hover:bg-muted w-full 
+          "
           >
-            <GoArrowUpRight className="text-base" />
-          </div>
-        </a>
+            <span>Github</span>
+
+            <div
+              className="
+              flex h-8 w-8 items-center justify-center
+              rounded-full bg-background
+              transition-transform duration-300
+              group-hover:rotate-45
+            "
+            >
+              <GoArrowUpRight className="text-base" />
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   );

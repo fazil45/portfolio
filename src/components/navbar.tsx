@@ -6,7 +6,7 @@ import { Cross, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export const Navbar = () => {
-  const [show, setShow] = useState(true );
+  const [show, setShow] = useState(true);
   const handleDropDown = () => {
     setShow((prev) => !prev);
   };
@@ -27,18 +27,21 @@ export const Navbar = () => {
           </div>
         </Link>
         <div className="flex gap-2">
+          <div className="p-1 font-medium  text-md rounded">
+            <ThemeToggle />
+          </div>
           <div
             onClick={handleDropDown}
-            className="cursor-pointer block lg:hidden transition-all ease-in-out"
+            className="cursor-pointer flex items-center justify-center lg:hidden transition-all ease-in-out"
           >
             {show ? <Menu /> : <X />}
           </div>
           <div className="hidden lg:flex gap-4 items-center justify-center">
             <div className="px-2 py-1  font-medium text-sm lg:text-md border rounded-md">
-              <Link href={"/projects"}>Projects</Link>
+              <Link href={"/blog"}>Blogs</Link>
             </div>
-            <div className="p-1 font-medium  text-md rounded">
-              <ThemeToggle />
+            <div className="px-2 py-1  font-medium text-sm lg:text-md border rounded-md">
+              <Link href={"/projects"}>Projects</Link>
             </div>
           </div>
         </div>
@@ -46,12 +49,14 @@ export const Navbar = () => {
       <div
         className={`${show ? "hidden" : "block"} transition-all ease-in-out`}
       >
-        <div className="h-fit py-4 rounded-xl w-full flex gap-8 items-center justify-center border mt-4 dark:border-neutral-300 border-neutral-700 lg:hidden">
-          <div className="px-2 py-1  font-medium text-sm lg:text-md border dark:border-neutral-400 border-neutral-500 rounded-md">
-            <Link href={"/projects"}>Projects</Link>
-          </div>
-          <div className="p-1 font-medium  text-md rounded">
-            <ThemeToggle />
+        <div className="h-fit p-2 rounded-md w-full  border mt-4  border-neutral-700 lg:hidden">
+          <div className="flex flex-col items-center justify-center w-full gap-2">
+            <div className="px-2 py-1 font-medium text-lg border lg:text-md flex items-center justify-center rounded-md w-full border-neutral-800">
+              <Link href={"/projects"}>Projects</Link>
+            </div>
+            <div className="px-2 py-1 font-medium text-lg border lg:text-md flex items-center justify-center rounded-md w-full border-neutral-800">
+              <Link href={"/blogs"}>Blogs</Link>
+            </div>
           </div>
         </div>
       </div>
