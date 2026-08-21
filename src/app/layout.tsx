@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Ubuntu_Condensed } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/themeProvider";
 
-const manrope = Manrope({
+const ubuntuCondensed = Ubuntu_Condensed({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("h-full scroll-smooth antialiased", manrope.variable)}
+      className={cn("h-full scroll-smooth antialiased", ubuntuCondensed)}
     >
       <body className="min-h-full bg-background font-sans text-foreground">
         <Toaster duration={3000} theme="dark" position="top-center" />

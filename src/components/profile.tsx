@@ -24,16 +24,19 @@ export const Profile = () => {
           ></Image>
         </div>
         <div className="flex flex-col gap-4 h-54  lg:text-lg text-shadow-2xs/60 lg:max-w-xl lg:mt-12">
-          <div className="text-xl leading-relaxed text-muted-foreground">
+          <div className="text-xl leading-tight tracking-tight dark:text-neutral-200 text-neutral-800 font-mono">
             Hey, I'm <span className="font-semibold text-cyan-500">Fazil</span>,
             a{" "}
             <span className="font-semibold text-cyan-500">
               Full Stack Developer
             </span>{" "}
             focused on building scalable, high-performance web applications with
-            modern UI/UX, cloud infrastructure, and <span className="font-semibold text-cyan-500">DevOps workflows using AWS,
-            Docker, and CI/CD</span> — creating products that are both visually
-            polished and production-ready.
+            modern UI/UX, cloud infrastructure, and{" "}
+            <span className="font-semibold text-cyan-500">
+              DevOps workflows using AWS, Docker, and CI/CD
+            </span>{" "}
+            — creating products that are both visually polished and
+            production-ready.
           </div>
           <div className="mt-4 flex gap-2">
             <div className="flex items-center justify-center gap-4">
@@ -61,7 +64,7 @@ export const Profile = () => {
               Email
             </div>
           </div>
-        </div>  
+        </div>
       </div>
     </>
   );
