@@ -1,9 +1,7 @@
 "use client";
-import Image from "next/image";
 import { FaMailBulk } from "react-icons/fa";
 import { socials } from "@/lib/socialType";
 import { toast } from "sonner";
-
 
 export const Profile = () => {
   const pasteToClipboard = async () => {
@@ -14,12 +12,11 @@ export const Profile = () => {
 
   return (
     <>
-      <div className="flex lg:flex-row flex-col  items-center justify-around my-4">
-        <div className="flex flex-col gap-4 h-54  lg:text-lg text-shadow-2xs/60 lg:max-w-xl lg:mt-8">
-
-          <div className="text-xl leading-tight tracking-tight dark:text-neutral-200 text-neutral-800 font-mono">
-            Hey, I'm <span className="font-semibold text-cyan-500">Fazil</span>,
-            a{" "}
+      <div className="my-4 flex w-full flex-col items-center justify-around px-3 sm:px-6 lg:flex-row">
+        <div className="flex min-h-54 w-full max-w-xl flex-col justify-center gap-4 text-shadow-2xs/60 lg:mt-8 lg:text-lg">
+          <div className="text-base leading-relaxed tracking-tight text-neutral-200 font-mono sm:text-xl sm:leading-tight">
+            Hey, I&apos;m{" "}
+            <span className="font-semibold text-cyan-500">Fazil</span>, a{" "}
             <span className="font-semibold text-cyan-500">
               Full Stack Developer
             </span>{" "}
@@ -31,8 +28,8 @@ export const Profile = () => {
             — creating products that are both visually polished and
             production-ready.
           </div>
-          <div className="mt-4 flex gap-2">
-            <div className="flex items-center justify-center gap-4">
+          <div className="mt-4 flex flex-wrap justify-center gap-2 sm:justify-start">
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
               {socials.map((details) => {
                 const Icon = details.icon;
                 return (
@@ -40,7 +37,7 @@ export const Profile = () => {
                     <a
                       href={details.link}
                       target="_blank"
-                      className="flex items-center justify-center hover:scale-102  gap-1 p-1 border rounded text-sm cursor-pointer font-mono"
+                      className="flex items-center justify-center gap-1 rounded border p-1 text-sm font-mono transition-transform hover:scale-102"
                     >
                       <Icon />
                       {details.name}
@@ -51,7 +48,7 @@ export const Profile = () => {
             </div>
             <div
               onClick={pasteToClipboard}
-              className="flex items-center justify-center hover:scale-102  gap-1 p-1 border rounded text-sm cursor-pointer ml-2 font-mono"
+              className="ml-0 flex cursor-pointer items-center justify-center gap-1 rounded border p-1 text-sm font-mono transition-transform hover:scale-102 sm:ml-2"
             >
               <FaMailBulk />
               Email

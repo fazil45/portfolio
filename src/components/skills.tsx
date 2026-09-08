@@ -44,12 +44,12 @@ const skillsDetail: Skill[] = [
 
 export const Skill = () => {
   return (
-    <div className="m-2 flex flex-wrap items-center justify-center gap-2 rounded-md border border-neutral-300 p-3 dark:border-neutral-700 sm:m-4 sm:gap-3 sm:p-4">
+    <div className="m-0 flex w-full flex-wrap items-center justify-center gap-2 rounded-md border border-neutral-700 p-3 sm:m-4 sm:gap-3 sm:p-4">
       {skillsDetail.map((skillDetails) => {
         const Icon = skillDetails.icon;
         return (
           <div
-            className="group flex cursor-pointer items-center justify-center gap-1.5 rounded-md border border-neutral-300 px-2 py-1 transition-all duration-200 hover:scale-105 hover:border-neutral-900 hover:bg-neutral-900 dark:border-neutral-700 dark:hover:border-white dark:hover:bg-white sm:gap-2 sm:px-3 sm:py-1.5"
+            className="group flex cursor-pointer items-center justify-center gap-1.5 rounded-md border border-neutral-700 px-2 py-1 transition-all duration-200 hover:scale-105 hover:border-white hover:bg-white sm:gap-2 sm:px-3 sm:py-1.5"
             key={skillDetails.id}
           >
             <Icon className="text-sm text-neutral-500 transition-colors duration-200 group-hover:text-white dark:text-neutral-400 dark:group-hover:text-neutral-900 sm:text-base" />

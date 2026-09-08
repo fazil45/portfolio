@@ -56,24 +56,24 @@ const Blogs = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center gap-6 p-6">
+      <div className="flex w-full flex-wrap items-stretch justify-center gap-4 p-3 sm:gap-6 sm:p-6">
         {posts.map((post) => (
           <a
             key={post.id}
             href={post.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow bg-background w-96 "
+            className="block w-full max-w-md overflow-hidden rounded-xl border border-neutral-700 bg-background transition-shadow hover:shadow-lg"
           >
             {post.cover_image && (
               <img
                 src={post.cover_image}
                 alt={post.title}
-                className="w-full h-48 object-cover"
+                className="h-40 w-full object-cover sm:h-48"
               />
             )}
 
-            <div className="p-4">
+            <div className="p-3 sm:p-4">
               <div className="flex flex-wrap gap-2 mb-2">
                 {post.tag_list.map((tag) => (
                   <span
@@ -85,15 +85,15 @@ const Blogs = () => {
                 ))}
               </div>
 
-              <h3 className="text-lg font-mono text-black dark:text-neutral-200 mb-2 line-clamp-2">
+              <h3 className="mb-2 line-clamp-2 text-lg font-mono text-neutral-200">
                 {post.title}
               </h3>
 
-              <p className="text-sm text-black dark:text-neutral-400 font-mono mb-3 line-clamp-3">
+              <p className="mb-3 line-clamp-3 text-sm font-mono text-neutral-400">
                 {post.description}
               </p>
 
-              <div className="flex items-center justify-between text-xs text-black dark:text-white font-mono">
+              <div className="flex items-center justify-between gap-2 text-xs font-mono text-white">
                 <span>{post.readable_publish_date}</span>
                 <span>{post.reading_time_minutes} min read</span>
               </div>
