@@ -20,10 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={cn("dark h-full scroll-smooth antialiased", ubuntuCondensed)}
-    >
+    <html lang="en" className={cn("dark h-full antialiased", ubuntuCondensed)}>
       <body className="min-h-full bg-background font-sans text-foreground">
         <Toaster duration={3000} theme="dark" position="top-center" />
         {children}

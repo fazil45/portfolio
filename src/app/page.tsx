@@ -4,11 +4,11 @@ export default function Home() {
   return (
     <div
       className="
-        relative mx-auto min-h-screen w-full max-w-3xl overflow-hidden 
+        relative mx-auto min-h-screen w-full max-w-3xl overflow-auto 
         bg-background text-foreground
         bg-[radial-gradient(circle,rgba(255,255,255,.07)_1px,transparent_1px)]
         dark:bg-[radial-gradient(circle,rgba(255,255,255,.07)_1px,transparent_1px)]
-        bg-size-[12px_12px]
+        bg-size-[12px_12px] 
       "
     >
       {/* Full-height borders */}
