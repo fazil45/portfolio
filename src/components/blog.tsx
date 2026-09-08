@@ -78,22 +78,22 @@ const Blogs = () => {
                 {post.tag_list.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs px-2 py-1 font-medium dark:text-black  text-white bg-gray-100 text- rounded-full"
+                    className="text-xs px-2 py-1 font-mono dark:text-black  text-white bg-gray-100 text- rounded-full"
                   >
                     #{tag}
                   </span>
                 ))}
               </div>
 
-              <h3 className="text-lg font-semibold text-black dark:text-neutral-200 mb-2 line-clamp-2">
+              <h3 className="text-lg font-mono text-black dark:text-neutral-200 mb-2 line-clamp-2">
                 {post.title}
               </h3>
 
-              <p className="text-sm text-black dark:text-neutral-400 font-medium mb-3 line-clamp-3">
+              <p className="text-sm text-black dark:text-neutral-400 font-mono mb-3 line-clamp-3">
                 {post.description}
               </p>
 
-              <div className="flex items-center justify-between text-xs text-black dark:text-white">
+              <div className="flex items-center justify-between text-xs text-black dark:text-white font-mono">
                 <span>{post.readable_publish_date}</span>
                 <span>{post.reading_time_minutes} min read</span>
               </div>
@@ -101,7 +101,7 @@ const Blogs = () => {
               <div className="flex items-center justify-between text-xs text-gray-400 mt-2">
                 <span>❤️ {post.public_reactions_count}</span>
                 <span>💬 {post.comments_count}</span>
-                <span className="font-medium text-gray-500">dev.to</span>
+                <span className="font-mono text-gray-500">dev.to</span>
               </div>
             </div>
           </a>

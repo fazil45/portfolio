@@ -4,6 +4,7 @@ import { FaMailBulk } from "react-icons/fa";
 import { socials } from "@/lib/socialType";
 import { toast } from "sonner";
 
+
 export const Profile = () => {
   const pasteToClipboard = async () => {
     const mail = "mdfazil846@gmail.com";
@@ -13,17 +14,9 @@ export const Profile = () => {
 
   return (
     <>
-      <div className="flex lg:flex-row flex-col  items-center justify-around mt-8">
-        <div className="lg:h-54 lg:w-54 hidden lg:block shadow-2xl/80 dark:shadow-neutral-700 shadow-neutral-200">
-          <Image
-            className="rounded-lg"
-            width={500}
-            height={500}
-            alt="Image"
-            src="/photo.jpg"
-          ></Image>
-        </div>
-        <div className="flex flex-col gap-4 h-54  lg:text-lg text-shadow-2xs/60 lg:max-w-xl lg:mt-12">
+      <div className="flex lg:flex-row flex-col  items-center justify-around my-4">
+        <div className="flex flex-col gap-4 h-54  lg:text-lg text-shadow-2xs/60 lg:max-w-xl lg:mt-8">
+
           <div className="text-xl leading-tight tracking-tight dark:text-neutral-200 text-neutral-800 font-mono">
             Hey, I'm <span className="font-semibold text-cyan-500">Fazil</span>,
             a{" "}
@@ -47,7 +40,7 @@ export const Profile = () => {
                     <a
                       href={details.link}
                       target="_blank"
-                      className="flex items-center justify-center hover:scale-102  gap-1 p-1 border rounded text-sm cursor-pointer"
+                      className="flex items-center justify-center hover:scale-102  gap-1 p-1 border rounded text-sm cursor-pointer font-mono"
                     >
                       <Icon />
                       {details.name}
@@ -58,7 +51,7 @@ export const Profile = () => {
             </div>
             <div
               onClick={pasteToClipboard}
-              className="flex items-center justify-center hover:scale-102  gap-1 p-1 border rounded text-sm cursor-pointer ml-2"
+              className="flex items-center justify-center hover:scale-102  gap-1 p-1 border rounded text-sm cursor-pointer ml-2 font-mono"
             >
               <FaMailBulk />
               Email

@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/navbar";
-import { ProjectCard } from "@/components/projects";
+import { Card, ProjectCard } from "@/components/projects";
 import { ArrowUpRightIcon } from "lucide-react";
 
 export const projectDetails = [
@@ -9,6 +9,7 @@ export const projectDetails = [
     details:
       "A modern collaborative drawing platform that brings your team together.",
     link: "https://fazil-canvascraft.netlify.app/",
+    tech:["WebSockets","Express","Prisma","Typescript"],
     github: "https://github.com/fazil45/canvascraft",
     image: "/collabcanvas.png",
   },
@@ -17,6 +18,7 @@ export const projectDetails = [
     name: "PayFlow",
     details: "Send, receive and manage your money effortlessly with PayFlow.",
     link: "https://fazil-payflow.netlify.app/",
+    tech:["TailwindCSS","Express","MongoDB","Typescript"],
     github: "https://github.com/fazil45/payflow",
     image: "/payflow.png",
   },
@@ -25,6 +27,7 @@ export const projectDetails = [
     name: "BrainStorm",
     details: "A cleaner home for your online brain",
     link: "https://fazil-brainstorm.netlify.app/",
+    tech:["Express","MongoDB","Typescript"],
     github: "https://github.com/fazil45/brainstorm-backend",
     image: "/brainstrom.png",
   },
@@ -33,6 +36,7 @@ export const projectDetails = [
     name: "Blogify",
     details: "Create your blogs",
     link: "https://fazil-blogify.netlify.app/",
+    tech:["TailwindCSS","Express","Prisma","Typescript"],
     github: "https://github.com/fazil45/blogify",
     image: "/blogify.png",
   },
@@ -53,9 +57,10 @@ const Project = () => {
           </div>
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 mb-12">
             {projectDetails.map((details) => (
-              <ProjectCard
+              <Card
                 key={details.id}
                 image={details.image}
+                tech={details.tech}
                 details={details.details}
                 link={details.link}
                 github={details.github}
